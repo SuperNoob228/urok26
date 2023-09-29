@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="big" id="big">
+            <div class="title">
+                Выберите город, о котором хотите узнать
+            </div>
+        </div>
+
+        <div class="little">
+            <div class="little-items" id="item-1">
+                <div class="little-img">
+                    <img src="img/newyork.jpg" alt="">
+                </div>
+                <div class="little-title">
+                    Нью-Йорк — крупнейший город США, входящий в одну из крупнейших агломераций мира. Население города составляет 8 467 513 человек, агломерации — 19,77 млн. Нью-Йорк расположен на берегу Атлантического океана в юго-восточной части штата Нью-Йорк. Город был основан в начале XVII века голландскими колонистами и до 1664 года назывался Новый Амстердам.
+                </div>
+            </div>
+
+            <div class="little-items" id="item-2">
+                <div class="little-img">
+                    <img src="img/dubai.jpg" alt="">
+                </div>
+                <div class="little-title">
+                    Дубай — крупнейший город Объединённых Арабских Эмиратов и глубоководный морской порт, административный центр одноимённого эмирата, важнейший торговый и финансовый центр ОАЭ и всего Ближнего Востока. Расположен на берегу Персидского залива.
+                </div>
+            </div>
+
+            <div class="little-items" id="item-3">
+                <div class="little-img">
+                    <img src="img/grozny.jpg" alt="">
+                </div>
+                <div class="little-title">
+                    Грозный — город на Северном Кавказе, на юге России, столица Чеченской Республики. Город республиканского значения, в состав района не входит, образуя городской округ город Грозный. Город воинской славы России с 6 апреля 2015 года.
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+    let big = document.getElementById('big')
+    let item_1 = document.getElementById('item-1')
+    let item_2 = document.getElementById('item-2')
+    let item_3 = document.getElementById('item-3')
+
+    item_1.onclick = active
+    item_2.onclick = active
+    item_3.onclick = active
+
+    item_1.addEventListener('click', changeInfo)
+    item_2.addEventListener('click', changeInfo)
+    item_3.addEventListener('click', changeInfo)
+
+    function active(){
+        item_1.classList.remove('active')
+        item_2.classList.remove('active')
+        item_3.classList.remove('active')
+
+        this.classList.toggle('active')
+    }
+
+    function changeInfo(){
+        let src = this.firstElementChild.firstElementChild.src
+        let text = this.lastElementChild.innerText
+
+        big.style.backgroundImage = `url(${src})`;
+        big.firstElementChild.innerText = text
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>
